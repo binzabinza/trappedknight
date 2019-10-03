@@ -104,7 +104,7 @@ def test_spiral_grid():
 
 
 #starting values
-IT_LIMIT  = 10000000                             #iteration limit
+IT_LIMIT  = 1000000                            #iteration limit
 di, dj    = int(sys.argv[1]), int(sys.argv[2]) #piece steps
 N         = 0                                  #step counter
 mk_graph  = False                               #set to True to print graphs at end
@@ -127,10 +127,10 @@ while simulate(k):
 
     #iteration limit
     if (N > IT_LIMIT):
-        print "iteration limit reached"
+        N="IT_LIMIT"
         break
 
-print N, k.current, values[-1]
+print "{}\t{}\t{}".format(N, k.current, values[-1])
 
 #putting our data in graphable format
 progress = zip(*progress)            #this unzips our list of tuples into two lists
